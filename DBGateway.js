@@ -42,6 +42,18 @@ class DBGateway {
             }
         }) 
     }
+
+    getByEmailAddress(email, callback){
+        sql.query(`SELECT * FROM ${this.table} WHERE email='${email}'`, function(err, res) {
+            if(err) {
+                console.log("error: ", err);
+                callback(err, null);
+            } else {
+                console.log(res);
+                callback(null, res);
+            }
+        }) 
+    }
 }
 
 module.exports = DBGateway;
