@@ -2,13 +2,11 @@
 const bcrypt = require('bcrypt');
 const auth = require('../../../libs/auth');
 
-
 const TABLE_NAME = require('../constants');
 const DBGateway = require("../../../DBGateway");
 const gateway = new DBGateway(TABLE_NAME);
 
 exports.login = function (req, res) {
-  console.log("here");
   gateway.getByEmailAddress(req.body.email, function (err, result) {
     if (err) {
       res.send(err);

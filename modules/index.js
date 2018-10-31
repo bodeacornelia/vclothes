@@ -1,6 +1,6 @@
 'use strict'
 
-const login = require('./login');
+const auth = require('./auth');
 const user = require('./user');
 const photo = require('./photo');
 const appointment = require('./appointment');
@@ -14,9 +14,10 @@ const envConfig = (env) => ({
 function init(app) {
   const config = envConfig(process.env);
   const { apiUrl } = config;
+
   app.set('apiBase', apiUrl);
 
-  login.init(app);
+  auth.init(app);
   user.init(app);
   photo.init(app);
   appointment.init(app);

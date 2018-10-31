@@ -1,6 +1,6 @@
 'use strict'
 
-const auth = require('./auth');
+const auth = require('./login');
 
 module.exports.init = init;
 
