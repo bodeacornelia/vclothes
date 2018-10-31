@@ -1,10 +1,12 @@
 'use strict'
 
-const express = require('express');
-const router = express.Router();
-
 const auth = require('./auth');
 
-router.use('/login' ,auth);
+module.exports.init = init;
 
-module.exports = router;
+function init(app) {
+  const BASE_URL = app.get('apiBase');
+  app.use(BASE_URL, auth);
+
+  return app;
+}

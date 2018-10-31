@@ -1,12 +1,14 @@
 'use strict'
 
-const express = require('express');
-const router = express.Router();
-
 const list = require('./list');
 const add = require('./add');
 
-router.use('/photos' ,list);
-router.use('/photos.add' ,add);
+module.exports.init = init;
 
-module.exports = router;
+function init(app) {
+  const BASE_URL = app.get('apiBase');
+  app.use(BASE_URL, list);
+  app.use(BASE_URL, add);
+
+  return app;
+}

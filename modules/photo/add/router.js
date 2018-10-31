@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('./AddPhotoController')
 
-router.route('/')
-  .post(controller.addPhoto);
+router.post('/photos.add',
+  controller.addPhoto);
 
 module.exports = router;

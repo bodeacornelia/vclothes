@@ -1,13 +1,14 @@
 'user strict';
 
-var mysql = require('mysql');
+const mysql = require('mysql');
+const config = process.env;
 
 //local mysql db connection
-var connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : 'root',
-    database : 'v_clothes'
+const connection = mysql.createConnection({
+    host     : config.DB_HOST,
+    user     : config.DB_USER,
+    password : config.DB_PASSORD,
+    database : config.DB_NAME
 });
 
 connection.connect(function(err) {
