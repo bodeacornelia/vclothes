@@ -2,9 +2,12 @@
 
 const express = require('express');
 const router = express.Router();
-const controller = require('./ListUsersController');
+const ListUsersController = require('./ListUsersController');
+const controller = new ListUsersController();
 
 router.get('/users',
-  controller.listAllUsers);
+  controller.authenticate(),
+  controller.listAllUsers(),
+);
 
 module.exports = router;
