@@ -2,9 +2,12 @@
 
 const express = require('express');
 const router = express.Router();
-const controller = require('./ListPhotoController');
+const PhotoListController = require('./PhotoListController');
+const controller = new PhotoListController();
 
 router.get('/photos',
-  controller.listAllPhotos);
+  controller.authenticate(),
+  controller.listAllPhotos()
+);
 
 module.exports = router;

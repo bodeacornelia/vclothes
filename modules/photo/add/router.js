@@ -2,9 +2,12 @@
 
 const express = require('express');
 const router = express.Router();
-const controller = require('./AddPhotoController')
+const AddPhotoController = require('./AddPhotoController')
+const controller = new AddPhotoController();
 
 router.post('/photos.add',
-  controller.addPhoto);
+  controller.authenticate(),
+  controller.addPhoto()
+);
 
 module.exports = router;

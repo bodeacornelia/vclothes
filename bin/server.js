@@ -21,5 +21,3 @@ app.use(bodyParser.json());
 
 const modules = require('../modules');
 modules.init(app);
-
-

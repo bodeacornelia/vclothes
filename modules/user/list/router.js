@@ -2,8 +2,8 @@
 
 const express = require('express');
 const router = express.Router();
-const ListUsersController = require('./ListUsersController');
-const controller = new ListUsersController();
+const UserListController = require('./UserListController');
+const controller = new UserListController();
 
 router.get('/users',
   controller.authenticate(),

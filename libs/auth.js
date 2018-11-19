@@ -7,7 +7,6 @@ exports.verifyJWTToken = function (token) {
       if (err || !decodedToken) {
         return reject(err)
       }
-
       resolve(decodedToken)
     })
   })

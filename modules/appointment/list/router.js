@@ -2,9 +2,12 @@
 
 const express = require('express');
 const router = express.Router();
-const controller = require('./ListAppointmentsController');
+const ListAppointmentsController = require('./ListAppointmentsController');
+const controller = new ListAppointmentsController();
 
 router.get('/appointments',
-  controller.listAllAppointments);
+  controller.authenticate(),
+  controller.listAllAppointments()
+);
 
 module.exports = router;

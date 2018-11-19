@@ -2,9 +2,12 @@
 
 var express = require('express');
 var router = express.Router();
-var controller = require('./DetailsUserController');
+const UserDetailsController = require('./UserDetailsController');
+const controller = new UserDetailsController();
 
 router.get('/user/:userId',
-  controller.listUserDetails);
+  controller.authenticate(),
+  controller.listUserDetails()
+);
 
 module.exports = router;

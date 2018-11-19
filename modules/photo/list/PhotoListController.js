@@ -5,20 +5,23 @@ const DBGateway = require("../../../DBGateway");
 const gateway = new DBGateway(TABLE_NAME);
 const Controller = require('../../../system/Controller');
 
-class ListAppointmentsController extends Controller {
+class PhotoListController extends Controller {
+
   constructor() {
     super();
   }
 
-  listAllAppointments() {
+  listAllPhotos() {
     return function (req, res) {
       gateway.getAll(function (err, result) {
-        if (err)
+        if (err) {
           res.send(err);
-        res.send(result);
-      })
+        } else {
+          res.send(result);
+        }
+      });
     }
   }
 }
 
-module.exports = ListAppointmentsController;
+module.exports = PhotoListController;

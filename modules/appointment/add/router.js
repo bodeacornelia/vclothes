@@ -2,9 +2,12 @@
 
 const express = require('express');
 const router = express.Router();
-const controller = require('./AddAppointmentController');
+const AddAppointmentController = require('./AddAppointmentController');
+const controller = new AddAppointmentController();
 
 router.post('/appointments.add',
-  controller.addAppointment);
+  controller.authenticate(),
+  controller.addAppointment()
+);
 
 module.exports = router;
