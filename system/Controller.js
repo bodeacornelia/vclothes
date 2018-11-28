@@ -1,8 +1,4 @@
 const passport = require('passport');
-const auth = require('../libs/auth');
-const DBGateway = require("../DBGateway");
-const gateway = new DBGateway('users');
-const BearerStrategy = require('passport-http-bearer').Strategy;
 
 class Controller {
 
