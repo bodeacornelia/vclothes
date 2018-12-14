@@ -27,3 +27,6 @@ config/environments/*
 
 # editor files
 .idea/*
+
+# env
+.env

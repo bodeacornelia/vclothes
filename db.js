@@ -5,10 +5,10 @@ const config = process.env;
 
 //local mysql db connection
 const connection = mysql.createConnection({
-    host     : config.DB_HOST,
-    user     : config.DB_USER,
-    password : config.DB_PASSORD,
-    database : config.DB_NAME
+    host     : config.MYSQLDB_HOST,
+    user     : config.MYSQL_ROOT_USERNAME,
+    password : config.MYSQL_ROOT_PASSWORD,
+    database : config.MYSQL_DATABASE
 });
 
 connection.connect(function(err) {
