@@ -9,7 +9,7 @@ dotenv.config();
 const port = process.env.BACKEND_PORT 
 
 app.use(cors({
-  origin: process.env.CLIENT_URL,
+  origin: process.env.FRONTEND_URL,
   optionsSuccessStatus: 200,
 }));
 
