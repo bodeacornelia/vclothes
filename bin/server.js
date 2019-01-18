@@ -7,14 +7,15 @@ const app = express();
 dotenv.config();
 
 const port = process.env.BACKEND_PORT 
+const clientUrl = `${process.env.FRONTEND_PROTOCOL}${process.env.FRONTEND_HOSTNAME}:${process.env.FRONTEND_PORT}`
 
 app.use(cors({
-  origin: process.env.FRONTEND_URL,
+  origin: clientUrl,
   optionsSuccessStatus: 200,
 }));
 
 app.listen(port);
-console.log('VClothes RESTful API server started on: ' + port);
+console.log('VSecret RESTful API server started on: ' + port);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
