@@ -2,10 +2,13 @@
 
 var express = require('express');
 var router = express.Router();
-var controller = require('./AuthController');
+var AuthController = require('./AuthController');
+var controller = new AuthController();
 
 router.post(
   '/login',
-  controller.login)
+  controller.localAuthenticate(),
+  controller.login()
+)
 
 module.exports = router;

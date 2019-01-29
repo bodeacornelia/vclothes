@@ -25,7 +25,6 @@ class DBGateway {
                 console.log("error: ", err);
                 callback(null, err);
             }else {
-                console.log("users: ", res);
                 callback(null, res);
             }
         });
@@ -37,8 +36,7 @@ class DBGateway {
                 console.log("error: ", err);
                 callback(err, null);
             } else {
-                console.log(res);
-                callback(null, res);
+                callback(null, JSON.stringify(res));
             }
         }) 
     }
@@ -49,7 +47,6 @@ class DBGateway {
                 console.log("error: ", err);
                 callback(err, null);
             } else {
-                console.log(res);
                 callback(null, res);
             }
         }) 

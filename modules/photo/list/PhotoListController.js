@@ -13,6 +13,7 @@ class PhotoListController extends Controller {
 
   listAllPhotos() {
     return function (req, res) {
+      console.log(req.user);
       gateway.getAll(function (err, result) {
         if (err) {
           res.send(err);
