@@ -2,11 +2,10 @@
 
 var express = require('express');
 var router = express.Router();
-var UserAddController = require('./UserAddController');
-const controller = new UserAddController();
+var RegisterController = require('./RegisterController');
+const controller = new RegisterController();
 
 router.post('/users.add',
-  controller.authenticate(),
   controller.createUser()
 );
 

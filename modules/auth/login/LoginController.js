@@ -1,7 +1,7 @@
 'use strict'
 const Controller = require('../../../system/Controller');
 
-class AuthController extends Controller {
+class LoginController extends Controller {
   constructor() {
     super();
   }
@@ -13,4 +13,4 @@ class AuthController extends Controller {
   };
 }
 
-module.exports = AuthController;
+module.exports = LoginController;

@@ -7,7 +7,7 @@ const DBGateway = require("../../../DBGateway");
 const gateway = new DBGateway(TABLE_NAME);
 const Controller = require('../../../system/Controller');
 
-class UserAddController extends Controller {
+class RegisterController extends Controller {
   constructor() {
     super();
   }
@@ -35,4 +35,4 @@ class UserAddController extends Controller {
   }
 }
 
-module.exports = UserAddController;
+module.exports = RegisterController;
